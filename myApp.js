@@ -6,7 +6,7 @@ const publicPath = __dirname + '/public';
 
 app.use('/public', express.static(publicPath));
 
-app.use(function (req, res, next){
+app.use(function(req, res, next) {
   const { method, path, ip } = req;
   const log = method + ' ' + path + ' - ' + ip;
 
@@ -14,6 +14,19 @@ app.use(function (req, res, next){
 
   next();
 });
+
+app.get(
+  '/now',
+  function(req, res, next) {
+    req.time = new Date().toString();
+    next()
+  },
+  function(req, res) {
+    res.json({
+      time: req.time
+    })
+  }
+);
 
 app.get('/json', function(req, res) {
   let message = {}
