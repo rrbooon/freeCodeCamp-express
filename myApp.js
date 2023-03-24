@@ -22,14 +22,18 @@ app.use(function(req, res, next) {
 app
   .route('/name')
   .get(function(req, res) {
-    const { first, last } = req.query;
+    let { first, last } = req.query;
 
     res.json({
       name: first + ' ' + last
     })
   })
   .post(function(req, res) {
+    let { first, last } = req.body;
 
+    res.json({
+      name: first + ' ' + last
+    })
   });
 
 app.get('/:word/echo', function(req, res) {
