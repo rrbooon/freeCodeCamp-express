@@ -15,6 +15,12 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/:word/echo', function (req, res){
+  res.json({
+    echo: req.params.word
+  })
+});
+
 app.get(
   '/now',
   function(req, res, next) {
