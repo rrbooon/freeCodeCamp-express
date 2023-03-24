@@ -4,7 +4,7 @@
   "description": "This is a freeCodeCamp course project to learn express",
   "keywords": ["freecodecamp", "course", "study"],
   "license": "MIT",
-	"version": "1.2.0",
+	"version": "1.3.0",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
