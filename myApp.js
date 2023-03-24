@@ -15,6 +15,16 @@ app.use(function(req, res, next) {
   next();
 });
 
+app
+  .route('/name')
+  .get(function (req, res){
+    const { first, last } = req.query;
+    
+    res.json({
+      name: first + ' ' + last
+    })
+  });
+
 app.get('/:word/echo', function (req, res){
   res.json({
     echo: req.params.word
