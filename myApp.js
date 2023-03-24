@@ -1,10 +1,14 @@
-let express = require('express');
+const express = require('express');
+const bodyParser = require('body-parser');
+
 let app = express();
 
 const absolutePath = __dirname + '/views/index.html';
 const publicPath = __dirname + '/public';
 
 app.use('/public', express.static(publicPath));
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(function(req, res, next) {
   const { method, path, ip } = req;
@@ -17,15 +21,18 @@ app.use(function(req, res, next) {
 
 app
   .route('/name')
-  .get(function (req, res){
+  .get(function(req, res) {
     const { first, last } = req.query;
-    
+
     res.json({
       name: first + ' ' + last
     })
+  })
+  .post(function(req, res) {
+
   });
 
-app.get('/:word/echo', function (req, res){
+app.get('/:word/echo', function(req, res) {
   res.json({
     echo: req.params.word
   })
