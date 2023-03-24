@@ -1,6 +1,5 @@
 {
-  "name": "fcc-learn-node-with-express",
-  "name": "fcc-learn-npm-package-json",
+  "name": "fcc-learn-node-with-express"
   "description": "This is a freeCodeCamp course project to learn express",
   "keywords": ["freecodecamp", "course", "study"],
   "license": "MIT",
